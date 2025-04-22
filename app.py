@@ -1,0 +1,194 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "ccb4fd49-9b70-4385-a5ea-50c847d96fd8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting plotly\n",
+      "  Downloading plotly-6.0.1-py3-none-any.whl.metadata (6.7 kB)\n",
+      "Requirement already satisfied: narwhals>=1.15.1 in c:\\users\\user\\appdata\\local\\programs\\python\\python313\\lib\\site-packages (from plotly) (1.25.1)\n",
+      "Requirement already satisfied: packaging in c:\\users\\user\\appdata\\local\\programs\\python\\python313\\lib\\site-packages (from plotly) (24.2)\n",
+      "Downloading plotly-6.0.1-py3-none-any.whl (14.8 MB)\n",
+      "   ---------------------------------------- 0.0/14.8 MB ? eta -:--:--\n",
+      "   - -------------------------------------- 0.5/14.8 MB 6.5 MB/s eta 0:00:03\n",
+      "   -- ------------------------------------- 1.0/14.8 MB 2.8 MB/s eta 0:00:05\n",
+      "   --- ------------------------------------ 1.3/14.8 MB 2.9 MB/s eta 0:00:05\n",
+      "   ---- ----------------------------------- 1.6/14.8 MB 2.3 MB/s eta 0:00:06\n",
+      "   ---- ----------------------------------- 1.8/14.8 MB 2.1 MB/s eta 0:00:07\n",
+      "   ----- ---------------------------------- 2.1/14.8 MB 1.8 MB/s eta 0:00:08\n",
+      "   ------ --------------------------------- 2.4/14.8 MB 1.6 MB/s eta 0:00:08\n",
+      "   ------- -------------------------------- 2.6/14.8 MB 1.6 MB/s eta 0:00:08\n",
+      "   ------- -------------------------------- 2.9/14.8 MB 1.6 MB/s eta 0:00:08\n",
+      "   -------- ------------------------------- 3.1/14.8 MB 1.5 MB/s eta 0:00:08\n",
+      "   --------- ------------------------------ 3.4/14.8 MB 1.5 MB/s eta 0:00:08\n",
+      "   --------- ------------------------------ 3.7/14.8 MB 1.5 MB/s eta 0:00:08\n",
+      "   --------- ------------------------------ 3.7/14.8 MB 1.5 MB/s eta 0:00:08\n",
+      "   --------- ------------------------------ 3.7/14.8 MB 1.5 MB/s eta 0:00:08\n",
+      "   ---------- ----------------------------- 3.9/14.8 MB 1.3 MB/s eta 0:00:09\n",
+      "   ---------- ----------------------------- 3.9/14.8 MB 1.3 MB/s eta 0:00:09\n",
+      "   ----------- ---------------------------- 4.2/14.8 MB 1.2 MB/s eta 0:00:09\n",
+      "   ----------- ---------------------------- 4.2/14.8 MB 1.2 MB/s eta 0:00:09\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.5/14.8 MB 1.1 MB/s eta 0:00:10\n",
+      "   ------------ --------------------------- 4.7/14.8 MB 839.2 kB/s eta 0:00:13\n",
+      "   ------------ --------------------------- 4.7/14.8 MB 839.2 kB/s eta 0:00:13\n",
+      "   ------------ --------------------------- 4.7/14.8 MB 839.2 kB/s eta 0:00:13\n",
+      "   ------------ --------------------------- 4.7/14.8 MB 839.2 kB/s eta 0:00:13\n",
+      "   ------------- -------------------------- 5.0/14.8 MB 776.9 kB/s eta 0:00:13\n",
+      "   ------------- -------------------------- 5.0/14.8 MB 776.9 kB/s eta 0:00:13\n",
+      "   -------------- ------------------------- 5.2/14.8 MB 765.9 kB/s eta 0:00:13\n",
+      "   -------------- ------------------------- 5.2/14.8 MB 765.9 kB/s eta 0:00:13\n",
+      "   -------------- ------------------------- 5.5/14.8 MB 764.8 kB/s eta 0:00:13\n",
+      "   --------------- ------------------------ 5.8/14.8 MB 770.9 kB/s eta 0:00:12\n",
+      "   --------------- ------------------------ 5.8/14.8 MB 770.9 kB/s eta 0:00:12\n",
+      "   ---------------- ----------------------- 6.0/14.8 MB 780.2 kB/s eta 0:00:12\n",
+      "   ---------------- ----------------------- 6.3/14.8 MB 792.4 kB/s eta 0:00:11\n",
+      "   ----------------- ---------------------- 6.6/14.8 MB 804.6 kB/s eta 0:00:11\n",
+      "   ------------------ --------------------- 6.8/14.8 MB 817.4 kB/s eta 0:00:10\n",
+      "   ------------------- -------------------- 7.1/14.8 MB 830.7 kB/s eta 0:00:10\n",
+      "   -------------------- ------------------- 7.6/14.8 MB 855.2 kB/s eta 0:00:09\n",
+      "   --------------------- ------------------ 7.9/14.8 MB 870.0 kB/s eta 0:00:08\n",
+      "   --------------------- ------------------ 8.1/14.8 MB 884.9 kB/s eta 0:00:08\n",
+      "   ----------------------- ---------------- 8.7/14.8 MB 914.8 kB/s eta 0:00:07\n",
+      "   ------------------------ --------------- 9.2/14.8 MB 944.7 kB/s eta 0:00:06\n",
+      "   ------------------------- -------------- 9.4/14.8 MB 959.5 kB/s eta 0:00:06\n",
+      "   -------------------------- ------------- 10.0/14.8 MB 989.3 kB/s eta 0:00:05\n",
+      "   ---------------------------- ----------- 10.5/14.8 MB 1.0 MB/s eta 0:00:05\n",
+      "   ----------------------------- ---------- 11.0/14.8 MB 1.0 MB/s eta 0:00:04\n",
+      "   ------------------------------- -------- 11.5/14.8 MB 1.1 MB/s eta 0:00:04\n",
+      "   -------------------------------- ------- 12.1/14.8 MB 1.1 MB/s eta 0:00:03\n",
+      "   --------------------------------- ------ 12.6/14.8 MB 1.1 MB/s eta 0:00:02\n",
+      "   ---------------------------------- ----- 12.8/14.8 MB 1.1 MB/s eta 0:00:02\n",
+      "   ----------------------------------- ---- 13.1/14.8 MB 1.2 MB/s eta 0:00:02\n",
+      "   ------------------------------------ --- 13.4/14.8 MB 1.1 MB/s eta 0:00:02\n",
+      "   ------------------------------------ --- 13.4/14.8 MB 1.1 MB/s eta 0:00:02\n",
+      "   ------------------------------------ --- 13.6/14.8 MB 1.1 MB/s eta 0:00:02\n",
+      "   ------------------------------------- -- 13.9/14.8 MB 1.1 MB/s eta 0:00:01\n",
+      "   ------------------------------------- -- 13.9/14.8 MB 1.1 MB/s eta 0:00:01\n",
+      "   -------------------------------------- - 14.2/14.8 MB 1.1 MB/s eta 0:00:01\n",
+      "   -------------------------------------- - 14.4/14.8 MB 1.1 MB/s eta 0:00:01\n",
+      "   ---------------------------------------  14.7/14.8 MB 1.1 MB/s eta 0:00:01\n",
+      "   ---------------------------------------- 14.8/14.8 MB 1.1 MB/s eta 0:00:00\n",
+      "Installing collected packages: plotly\n",
+      "Successfully installed plotly-6.0.1\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "[notice] A new release of pip is available: 24.3.1 -> 25.0.1\n",
+      "[notice] To update, run: python.exe -m pip install --upgrade pip\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install plotly"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "a5127124-9390-4eab-82a6-1b5be437e8f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "2025-04-21 23:59:43.120 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.144 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.148 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.153 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.156 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.159 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.166 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.167 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.172 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n",
+      "2025-04-21 23:59:43.173 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+     ]
+    }
+   ],
+   "source": [
+    "import streamlit as st\n",
+    "import pandas as pd\n",
+    "import plotly.express as px\n",
+    "\n",
+    "st.set_page_config(page_title=\"Tableau de bord éducatif\", layout=\"wide\")\n",
+    "\n",
+    "st.title(\"📊 Tableau de bord de l'éducation rurale au Sénégal\")\n",
+    "\n",
+    "# Upload du fichier CSV\n",
+    "uploaded_file = st.file_uploader(\"Téléversez le fichier CSV des données scolaires\", type=[\"csv\"])\n",
+    "\n",
+    "if uploaded_file:\n",
+    "    df = pd.read_csv(uploaded_file)\n",
+    "\n",
+    "    st.success(\"✅ Données chargées avec succès !\")\n",
+    "\n",
+    "    # Calculs de base\n",
+    "    df[\"taux_abandon\"] = (df[\"inscrits\"] - df[\"presents\"]) / df[\"inscrits\"] * 100\n",
+    "    df[\"taux_reussite\"] = df[\"admis\"] / df[\"presents\"] * 100\n",
+    "\n",
+    "    # Filtres\n",
+    "    annee_select = st.selectbox(\"Sélectionnez l'année\", df[\"annee\"].unique())\n",
+    "    df_filtré = df[df[\"annee\"] == annee_select]\n",
+    "\n",
+    "    # Graphique 1 : taux d'abandon par école\n",
+    "    fig1 = px.bar(df_filtré, x=\"ecole\", y=\"taux_abandon\", color=\"village\", title=\"Taux d'abandon par école\")\n",
+    "    st.plotly_chart(fig1, use_container_width=True)\n",
+    "\n",
+    "    # Graphique 2 : taux de réussite\n",
+    "    fig2 = px.bar(df_filtré, x=\"ecole\", y=\"taux_reussite\", color=\"village\", title=\"Taux de réussite par école\")\n",
+    "    st.plotly_chart(fig2, use_container_width=True)\n",
+    "\n",
+    "    # Affichage tableau\n",
+    "    st.dataframe(df_filtré)\n",
+    "\n",
+    "else:\n",
+    "    st.info(\"📥 Veuillez téléverser un fichier CSV pour commencer.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4e3fd678-2ef3-44ba-a561-b96b754facfe",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
